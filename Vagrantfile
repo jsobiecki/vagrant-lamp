@@ -22,7 +22,7 @@ Vagrant::Config.run do |config|
   # network using the host's network device. This makes the VM appear as another
   # physical device on your network.
   config.vm.network :bridged
-  config.vm.share_folder("v-root", "/vagrant", ".")
+  config.vm.share_folder("v-root", "/vagrant", ".", {:owner => "www-data", :group => "www-data"})
 
   # Enable provisioning with chef solo, specifying a cookbooks path (relative
   # to this Vagrantfile), and adding some recipes and/or roles.
